@@ -38,8 +38,9 @@ const person = {
     let major = education[major];
     let university = education[university][name];
   
-    return "My name is ${person.firstName}, and I graduated from ${university} with a $[degree] in ${major}".
-  }
+    return `My name is ${person.firstName}, and I graduated from ${university} with a ${degree} in ${major}.`;
+  } //SyntaxError: Unexpected token '}'
+
   
   function logAllFriendsNamesAndAges(person) {
     let [ friends ] = person;
@@ -50,10 +51,10 @@ const person = {
   }
   
   function addAreaCodeToPhoneNums(person, areaCode) {
-    let [ phone ] = person;
+    let [phone] = person;
   
     for (const key of phone) {
-      phone.key = "(" areaCode + ") " + phone.key;
+      phone.key = `(${areaCode})`+ phone.key; // SyntaxError: Unexpected identifier 'areaCode'
     }
     return phone;
   }
@@ -71,7 +72,7 @@ const person = {
   function logIfCanDrive(person) {
     if (person[age] === "true") {
       console.log("This person is of the legal age to drive.");
-    } else if {
+    } else { //SyntaxError: Unexpected token '{'
       console.log("This person cannot legally drive.")
     }
   }
@@ -82,5 +83,5 @@ const person = {
   }
   
   function ageUpPerson1Year(person) {
-    person[age]++ += person[age];
+    person[age] += person[age]; //SyntaxError: Invalid left-hand side in assignment
   }
